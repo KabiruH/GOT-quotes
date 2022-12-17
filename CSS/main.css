@@ -8,7 +8,8 @@ body {
   font-size: 19px;
   color: #ffffff;
   overflow-x: hidden;
-  background: #25332e;
+  background-image: url(../Images/front.jpg);
+
 }
 
 a {
@@ -67,7 +68,7 @@ a {
 .tm-nav-link:hover,
 .tm-nav-link:focus {
   text-decoration: none;
-  color: #950000;
+  color: #521a1a;
 }
 
 .tm-bg-dark {
@@ -126,7 +127,7 @@ a {
 .tm-link:focus,
 .tm-link:hover {
   text-decoration: none;
-  color: #950000;
+  color: #d7c8c8;
 }
 
 .tm-bottom-container {
@@ -193,13 +194,14 @@ a {
   position: static;
 }
 .tm-section {
-  background-color: #950000;
+  color: #950000;
   opacity: inherit;
 }
 .tm-site-header-box {
-  background-color: #950000;
+  color: #950000;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-decoration: dotted;
 }
 
-.page1 {
-  background-image: url(../Images/front.jpg);
-}
+
+
