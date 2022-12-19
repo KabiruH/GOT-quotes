@@ -1,25 +1,40 @@
-//URLS
-let randomQuotes = "https://api.gameofthronesquotes.xyz/v1/random/5"
-let houses = "https://api.gameofthronesquotes.xyz/v1/houses"
-let charactersList = "https://api.gameofthronesquotes.xyz/v1/characters"
+
 
 document.addEventListener ("DOMContentLoaded", () => {
+
 //Several random Quotes
-const loadRandomQuote = () => {
-    fetch (randomQuotes)
-    .then ((res) => res.json())
-    .then ((data => {      
-    }))
-}
 
+   fetch ("https://api.gameofthronesquotes.xyz/v1/random/5") 
+    .then (function(response) {
+        return response.json()
+    })
+        .then(function(data) {
+            console.log (data)
+        })
+   
+        function getRandomQuotes (RandomQuotes) {
+            document.getElementById ("random")
 
+   }
 
 
 //Houses and their members
-fetch (houses)
+fetch ("https://api.gameofthronesquotes.xyz/v1/houses")
+    .then (function (response) {
+        return response.json()
+    })
+    .then (function (data) {
+        console.log (data)
+    })
 
 
 // Characters list and their quotes
-fetch (charactersList)
+fetch ("https://api.gameofthronesquotes.xyz/v1/characters")
+    .then (function (response) {
+        return response.json()
+    })
+    .then (function (data) {
+        console.log (data)
+    }) 
 
 })
