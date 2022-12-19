@@ -4,18 +4,29 @@ document.addEventListener ("DOMContentLoaded", () => {
 
 //Several random Quotes
 
-   fetch ("https://api.gameofthronesquotes.xyz/v1/random/5") 
+fetch ("https://api.gameofthronesquotes.xyz/v1/random/5") 
     .then (function(response) {
         return response.json()
     })
         .then(function(data) {
-            console.log (data)
-        })
+            //console.log (data)
+        
    
-        function getRandomQuotes (RandomQuotes) {
-            document.getElementById ("random")
+let randomQuotes = ""
+   data.map((quotes) => {
+    randomQuotes = `<div class="tm-textbox tm-bg-dark">
+    <p id="random">
+       ${quotes.sentence}
+    </p>
+    <p class="mb-4">
+       ${quotes.character}
+    </p>
+    </div>`
+})
 
-   }
+document.getElementByClass("quotes").innerHTML=randomQuotes
+})
+   
 
 
 //Houses and their members
