@@ -2,31 +2,30 @@
 
 document.addEventListener ("DOMContentLoaded", () => {
 
-//Several random Quotes
+    //Data
+    const randomQuotes = document.getElementsByClassName ("quotes")
+    const getHouses = document.getElementsByClassName ("houses")
+    const getCharacters = document.getElementsByClassName ("Characters")
 
+
+
+
+
+    //Several random Quotes
+
+function fetchData () {
 fetch ("https://api.gameofthronesquotes.xyz/v1/random/5") 
     .then (function(response) {
         return response.json()
     })
         .then(function(data) {
-            //console.log (data)
-        
-   
-let randomQuotes = ""
-   data.map((quotes) => {
-    randomQuotes = `<div class="tm-textbox tm-bg-dark">
-    <p id="random">
-       ${quotes.sentence}
-    </p>
-    <p class="mb-4">
-       ${quotes.character}
-    </p>
-    </div>`
+       //console.log (data)
+
+  
 })
 
-document.getElementByClass("quotes").innerHTML=randomQuotes
-})
-   
+}
+fetchData ()
 
 
 //Houses and their members
