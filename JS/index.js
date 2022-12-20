@@ -3,13 +3,20 @@
 document.addEventListener ("DOMContentLoaded", () => {
 
     //Data
-    const randomQuotes = document.getElementsByClassName ("quotes")
+    const getQuotes = document.getElementsByClassName ("quotes")
     const getHouses = document.getElementsByClassName ("houses")
     const getCharacters = document.getElementsByClassName ("Characters")
 
+    //Click Events
+    const randomQuote = document.getElementById ("getQuote")
+    const randomHouses = document.getElementById ("getHouse")
+    const randomCharacters = document.getElementById ("getCharacters")
 
+    randomQuote.addEventListener('click', () => {})
 
+    randomHouses.addEventListener('click', () =>{})
 
+    randomCharacters.addEventListener('click', () => {})
 
     //Several random Quotes
 
@@ -19,7 +26,8 @@ fetch ("https://api.gameofthronesquotes.xyz/v1/random/5")
         return response.json()
     })
         .then(function(data) {
-       //console.log (data)
+       console.log (data)
+
 
   
 })
