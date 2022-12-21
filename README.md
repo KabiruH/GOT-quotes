@@ -20,7 +20,7 @@ To view this site, you as the user only need to have a working browser such as
     -Brave
 and others. 
 
-To access the site you input any username and password. This will lead you to the content pages
+To access the site you input *any username and password.* This will lead you to the content pages
 
 
 ### Running the tests/getting the information

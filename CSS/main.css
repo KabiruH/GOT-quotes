@@ -3,6 +3,13 @@
   padding: 0;
 }
 
+h1 {
+  background-color: rgba(0, 0, 0, 0.483);
+  opacity: initial;
+  font-weight: 600;
+  font-family: 'Franklin Gothic Medium';
+  }
+
 body {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 19px;
@@ -18,6 +25,18 @@ a {
   transition: all 0.2s;
 }
 
+.houses {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.314);
+  font-size: 1.1rem;
+}
+
+.Characters {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.314);
+  font-size: 1.1rem;
+  padding: 10px;
+}
 #getQuote {
   color: red;
   background-color: black;
