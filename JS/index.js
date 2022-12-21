@@ -36,7 +36,6 @@ fetch ("https://api.gameofthronesquotes.xyz/v1/random/5")
         quoteDiv.appendChild(theQuotes)
     }
     
-    showQuote ()
     
   
 
