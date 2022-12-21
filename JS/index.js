@@ -1,18 +1,36 @@
 
-
-document.addEventListener ("DOMContentLoaded", () => {
-
-    
     //Data
+    const loginBtn = document.getElementById("loginBtn")
+    const usernameInput = document.getElementById("username")
+    const passwordInput = document.getElementById("password")
+    const login = document.getElementById("login")
     
+    const getQuote = document.getElementsByClassName ("quotes")
     const getHouse = document.getElementsByClassName ("houses")
     const getCharacters = document.getElementsByClassName ("Characters")
+    
     let quotes = []
     let selectedQuote = null
+    letSearch = null
     
+    window.addEventListener ("load", () => {
+        getQuotes()
     
 
-    //Several random Quotes
+        
+    // loginBtn.addEventListener("click", () => {
+    //     const username = usernameInput
+    //     const password = passwordInput
+          
+    //     if (!username || username == "" || !password || password == "") {
+    //     alert("Fill in all the fields")
+    //     } else {
+    //     login.style.visibility = "hidden"
+    //     }
+    //     })
+        
+        
+        //Several random Quotes
 
 
 fetch ("https://api.gameofthronesquotes.xyz/v1/random/5") 
@@ -23,18 +41,31 @@ fetch ("https://api.gameofthronesquotes.xyz/v1/random/5")
             throw new Error ('network error')
         }
     })
-    .then((data) =>{
-        console.log (data)
-        showQuote (data)
+    .then((quotes) =>{
+        console.log (quotes)
+               
     })
 
-    function showQuote(data) {
-        const getQuote = data
-        const quoteDiv = document.getElementsByClassName ("quotes")
-        const theQuotes = document.createElement("ul")
-     
-        quoteDiv.appendChild(theQuotes)
+    function getQuotes () {
+        console.log ({quotes})
+
+        if (quotes) {
+            quotes.forEach((sentence, character) => {
+                const listQuotes = document.createElement("li")
+                listQuotes.textContent = sentence.character
+                listQuotes.setAttribute("class", "listQuotes")
+
+                listQuotes.addEventListener("click", () => {
+                    selectedQuote = sentence.character
+                })
+
+                getQuote.append(listQuotes)
+            })
+        }
     }
+
+  
+    
     
     
   
