@@ -15,7 +15,7 @@ let selectedQuote = null
 let Search = null
 
 
-//Login Page
+// Login Page
 window.addEventListener("load", () => {
 
     loginBtn.addEventListener("click", () => {
@@ -23,21 +23,21 @@ window.addEventListener("load", () => {
         const password = passwordInput
 
         if (!username || username == "" && !password || password == "") {
-           
-            document.querySelector("locked").addEventListener("click", function(){
+
+            document.querySelector("locked").addEventListener("click", function () {
                 let p = document.querySelector("locked");
                 let visibility = getComputedStyle(p).visibility;
-                if(visibility == "hidden")
-                  p.style.visibility = "visible";
+                if (visibility == "hidden")
+                    p.style.visibility = "visible";
                 else
-                  p.style.visibility = "hidden";
-              })
-          
+                    p.style.visibility = "hidden";
+            })
+
         } else {
             let access = document.getElementById("locked")
             login.style.visibility = "hidden"
             access.style.visibility = "visible"
-         }
+        }
     })
 })
 
@@ -47,7 +47,7 @@ function fetchData() {
     fetch("https://api.gameofthronesquotes.xyz/v1/random/5")
         .then((response) => {
             if (response.ok) {
-                 return response.json()
+                return response.json()
             } else {
                 throw new Error('network error')
             }
@@ -68,7 +68,7 @@ function fetchData() {
                 // console.log('quote character house slug', quote.character.house.slug)
 
                 const listQuote = document.createElement("li")
-                listQuote.innerHTML = `sentence: ${quote.sentence} </br> character name: ${quote.character.name}  </br> character house name: ${quote.character.house.name} </br> character house slug: ${quote.character.house.slug} </br> </br>`
+                listQuote.innerHTML = `sentence: ${quote.sentence} </br> character name: ${quote.character.name}  </br> House name: ${quote.character.house.name} </br> House slug: ${quote.character.house.slug} </br> </br>`
                 const lost = document.getElementById('quotesHere')
                 lost.innerHTML = listQuote.innerHTML
             })
@@ -76,6 +76,7 @@ function fetchData() {
         }
 
     }
+    
 
     let btn = document.getElementById("getQuote")
     btn.addEventListener('click', fetchData)
@@ -83,13 +84,37 @@ function fetchData() {
 
 fetchData()
 
-//Houses and their members
-// fetch ("https://api.gameofthronesquotes.xyz/v1/houses")
-//     .then ((response) => {
-//         if (response.ok) {
-//             return response
-//         }
-//     })
+// Houses and their members
+function fetchHouses () {
+fetch("https://api.gameofthronesquotes.xyz/v1/houses")
+    .then((response) => {
+        if (response.ok) {
+            return response.json()
+        } else {
+            throw new Error('network error')
+        }
+    }) 
+    .then((response) => {
+        houses = response
+        getHouses (houses)
+    })
+
+    function getHouses (houses) {
+        if (houses) {
+            houses.forEach((house) => {
+                const listHouse = document.createElement("li")
+                listHouse.innerHTML = `slug: ${house.slug} </br> name: ${house.name}  </br> Members: ${house.name.slug} </br></br>`
+                const places = document.getElementById('housesHere')
+                places.innerHTML += listHouse.innerHTML
+                })
+
+        }
+    }
+    let btn = document.getElementById("getHouse")
+    btn.addEventListener('click', fetchHouses)
+}
+fetchHouses ()
+
 
 
 // Characters list and their quotes

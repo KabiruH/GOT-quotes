@@ -58,10 +58,10 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
-          <!-- Site content -->
-          <div class="tm-content">
-            <!-- Section 0 Home -->
+         <div class="tm-content">
+            
 
+            <!-- Section 0 Characters -->
             <section class="tm-section tm-section-0" id="value">
               <h2 class="tm-section-title mb-3 font-weight-bold">
                 Quotes
@@ -70,14 +70,6 @@
                 <ol>
                   <li id="quotesHere"></li>
                 </ol>
-                <!-- <div class="tm-textbox tm-bg-dark">
-                      <p id="random">
-                        Get a random quote.
-                      </p>
-                      <p class="mb-4">
-                        characters in the houses
-                      </p>
-                       </div> -->
               </div>
               <button id="getQuote">Get Random Quote</button>
             </section>
@@ -89,12 +81,12 @@
               </h2>
               <div class="tm-textbox tm-textbox-2 tm-bg-dark">
                 <div class="houses">
-                  Houses listed here.
+                  <ol>
+                    <li id="housesHere"></li>
+                  </ol>
                 </div>
-                <p class="mb-4">
-                  characters in the houses
                 </p>
-                <button id="getHouse">Click Here</button>
+                <button id="getHouse">Get Houses</button>
               </div>
             </section>
 
@@ -119,11 +111,11 @@
               <form action="" class="tm-contact-form" method="post">
                 <div class="form-group mb-4">
                   <input type="text" id="contact_name" name="contact_name" class="form-control"
-                    placeholder="Title of quote" required />
+                    placeholder="Character" required />
                 </div>
                 <div class="form-group mb-4">
                   <input type="email" id="contact_email" name="contact_email" class="form-control"
-                    placeholder="Character" required />
+                    placeholder="Email" required />
                 </div>
                 <div class="form-group mb-4">
                   <textarea rows="4" id="contact_message" name="contact_message" class="form-control"
