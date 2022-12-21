@@ -6,7 +6,7 @@ const login = document.getElementById("login")
 
 const getQuote = document.getElementsByClassName("quotes")
 const getHouse = document.getElementsByClassName("houses")
-const getCharacters = document.getElementsByClassName("Characters")
+const getCharacter = document.getElementsByClassName("Characters")
 
 let quotes = []
 let houses = []
@@ -103,7 +103,7 @@ fetch("https://api.gameofthronesquotes.xyz/v1/houses")
         if (houses) {
             houses.forEach((house) => {
                 const listHouse = document.createElement("li")
-                listHouse.innerHTML = `slug: ${house.slug} </br> name: ${house.name}  </br> Members: ${house.name.slug} </br></br>`
+                listHouse.innerHTML = `slug: ${house.slug} </br> name: ${house.name}</br></br>`
                 const places = document.getElementById('housesHere')
                 places.innerHTML += listHouse.innerHTML
                 })
@@ -118,11 +118,33 @@ fetchHouses ()
 
 
 // Characters list and their quotes
+function fetchCharacters () {
 fetch("https://api.gameofthronesquotes.xyz/v1/characters")
-    .then(function (response) {
+.then((response) => {
+    if (response.ok) {
         return response.json()
-    })
-    .then(function (data) {
-        console.log(data)
-    })
+    } else {
+        throw new Error('network error')
+    }
+}) 
+.then((response) => {
+    characters = response
+    getCharacters (characters)
+})
+function getCharacters (characters) {
+    if (characters) {
+        characters.forEach((character) => {
+            const listCharacter = document.createElement("li")
+            listCharacter.innerHTML = `name: ${character.name} </br> slug: ${character.slug}</br> house: ${character.house.slug}</br> house: ${character.house.name}</br> house: ${character.quotes}</br></br>`
+            const people = document.getElementById('charactersHere')
+            people.innerHTML += listCharacter.innerHTML
+            })
+
+    }
+}
+let btn = document.getElementById("getCharacters")
+    btn.addEventListener('click', fetchCharacters)
+
+}
+fetchCharacters ()
 
