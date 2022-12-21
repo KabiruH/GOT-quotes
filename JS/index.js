@@ -13,15 +13,10 @@ let houses = []
 let characters = []
 let selectedQuote = null
 let Search = null
-// let isLoggedIn = false
 
 
+//Login Page
 window.addEventListener("load", () => {
-
-    // function changeStyle(){
-    ;
-    // //     element.style.display = "none";
-    // } 
 
     loginBtn.addEventListener("click", () => {
         const username = usernameInput
@@ -37,36 +32,22 @@ window.addEventListener("load", () => {
                 else
                   p.style.visibility = "hidden";
               })
-            // let access = document.getElementById("locked")
-            // // isLoggedIn = false
-            // access.style.display = "none"
-            //alert("Fill in all the fields")
+          
         } else {
             let access = document.getElementById("locked")
             login.style.visibility = "hidden"
             access.style.visibility = "visible"
-            // function changeStyle(){
-            //     var element = document.getElementById("locked");
-            //     element.style.display = "show";
-            // }
-        }
+         }
     })
 })
 
 
 //Several random Quotes
-
-
 function fetchData() {
     fetch("https://api.gameofthronesquotes.xyz/v1/random/5")
         .then((response) => {
-            // quotes = response.json() 
-            // getQuotes (quotes)
             if (response.ok) {
-
-                //console.log (quotes)
-
-                return response.json()
+                 return response.json()
             } else {
                 throw new Error('network error')
             }
@@ -74,16 +55,10 @@ function fetchData() {
         .then((response) => {
             quotes = response
             getQuotes(quotes)
-
-            console.log(quotes)
-
         })
 
     function getQuotes(quotes) {
-        console.log(quotes)
-
         if (quotes) {
-
             quotes.forEach((quote) => {
                 // console.log('quote sentence', quote.sentence)
                 // console.log('quote character', quote.character)
@@ -95,10 +70,7 @@ function fetchData() {
                 const listQuote = document.createElement("li")
                 listQuote.innerHTML = `sentence: ${quote.sentence} </br> character name: ${quote.character.name}  </br> character house name: ${quote.character.house.name} </br> character house slug: ${quote.character.house.slug} </br> </br>`
                 const lost = document.getElementById('quotesHere')
-                lost.innerHTML += listQuote.innerHTML
-
-                //console.log('listQuote', listQuote)
-
+                lost.innerHTML = listQuote.innerHTML
             })
 
         }
@@ -106,9 +78,7 @@ function fetchData() {
     }
 
     let btn = document.getElementById("getQuote")
-    btn.addEventListener('click', function () {
-        location.reload();
-    })
+    btn.addEventListener('click', fetchData)
 }
 
 fetchData()
