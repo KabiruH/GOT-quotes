@@ -2,52 +2,45 @@
 
 document.addEventListener ("DOMContentLoaded", () => {
 
+    
     //Data
-    const getQuotes = document.getElementsByClassName ("quotes") 
-    const getHouses = document.getElementsByClassName ("houses")
+    
+    const getHouse = document.getElementsByClassName ("houses")
     const getCharacters = document.getElementsByClassName ("Characters")
     let quotes = []
     let selectedQuote = null
     
-
-    //Click Events
-    const randomQuote = document.getElementById ("getQuote")
-    const randomHouses = document.getElementById ("getHouse")
-    const randomCharacters = document.getElementById ("getCharacters")
-
-    randomQuote.addEventListener('click', () => {})
-
-    randomHouses.addEventListener('click', () =>{})
-
-    randomCharacters.addEventListener('click', () => {})
+    
 
     //Several random Quotes
 
-function fetchData () {
+
 fetch ("https://api.gameofthronesquotes.xyz/v1/random/5") 
-    .then ((response) => response.json())
+    .then ((response) => {
+        if (response.ok) {
+            return response.json()
+        } else {
+            throw new Error ('network error')
+        }
+    })
     .then((data) =>{
-        quotes = data    
-       //console.log (data)
-
-
-       quotes.forEach((sentence, character) => {
-        const listQuotes = document.createElement("li")
-        listQuotes.textContent = selectedQuote
-
-        listQuotes.addEventListener('click', () => {
-            selectedQuote
-        })
-        getQuotes.appendChild(listQuotes)   
-    })
+        console.log (data)
+        showQuote (data)
     })
 
-
+    function showQuote(data) {
+        const getQuote = data
+        const quoteDiv = document.getElementsByClassName ("quotes")
+        const theQuotes = document.createElement("ul")
+     
+        quoteDiv.appendChild(theQuotes)
+    }
+    
+    showQuote ()
+    
   
-}
 
 
-fetchData ()
 
 
 //Houses and their members
