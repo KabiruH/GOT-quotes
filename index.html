@@ -1,70 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game of Thrones</title>
-    <link rel="stylesheet" href="CSS/bootstrap.css">
-    <link rel="stylesheet" href="CSS/bootstrap.min.css">
-    <link rel="stylesheet" href="CSS/main.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game of Thrones</title>
+  <link rel="stylesheet" href="CSS/bootstrap.css">
+  <link rel="stylesheet" href="CSS/bootstrap.min.css">
+  <link rel="stylesheet" href="CSS/main.css">
 </head>
+
 <body id="image">
+
+  <!-- login details -->
   <div class="login" id="login">
     <form>
       <br>
       <label>Username</label>
       <input type="text" name="username" id="username">
-    </br>
-    <br>
-    <label>Password</label>
-    <input type="text" name="Password" id="Password">
-  </br>
-  <button type="button" id="loginBtn">Login</button>
+      </br>
+      <br>
+      <label>Password</label>
+      <input type="text" name="Password" id="Password">
+      </br>
+      <button type="button" id="loginBtn">Login</button>
     </form>
   </div>
-        <div class="tm-main-container">
-          <div class="tm-top-container">
-            <!-- Menu -->
-            <nav id="tmNav" class="tm-nav">
-              <a class="tm-navbar-menu" href="#">Home</a>
-              <ul class="tm-nav-links">
-                <li class="tm-nav-item active">
-                  <a href="#" data-linkid="0" data-align="right" class="tm-nav-link">Characters list and their quotes</a>
-                </li>
-                <li class="tm-nav-item">
-                  <a href="#" data-linkid="1" data-align="right" class="tm-nav-link">Houses and their members</a>
-                </li>
-                <li class="tm-nav-item2">
-                    <a href="#" data-linkid="2" data-align="right" class="tm-nav-link">Add Quote</a>
-                  </li>
-               </ul>
-            </nav>
-    
-            <!-- Site header -->
-            <header class="tm-site-header-box tm-bg-dark">
-              <h1 class="tm-site-title">Game of Thrones</h1>
-              <p class="mb-0 tm-site-subtitle">Memorable Quotes from the Show</p>
-            </header>
-          </div>
-          <!-- tm-top-container -->
-    
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-12">
-                <!-- Site content -->
-                <div class="tm-content">
-                  <!-- Section 0 Home -->
-                  
-                   <section class="tm-section tm-section-0" id="value">
-                    <h2 class="tm-section-title mb-3 font-weight-bold">
-                      Quotes
-                    </h2>
-                    <div class="quotes">
-                      <ol>
-                        <li id="quotesHere"></li>
-                     </ol>
-                    <!-- <div class="tm-textbox tm-bg-dark">
+
+
+  <div class="tm-main-container" id="locked">
+    <div class="tm-top-container">
+      <!-- Menu -->
+      <nav id="tmNav" class="tm-nav">
+        <a class="tm-navbar-menu" href="#">Home</a>
+        <ul class="tm-nav-links">
+          <li class="tm-nav-item active">
+            <a href="#" data-linkid="0" data-align="right" class="tm-nav-link">Characters list and their quotes</a>
+          </li>
+          <li class="tm-nav-item">
+            <a href="#" data-linkid="1" data-align="right" class="tm-nav-link">Houses and their members</a>
+          </li>
+          <li class="tm-nav-item2">
+            <a href="#" data-linkid="2" data-align="right" class="tm-nav-link">Add Quote</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Site header -->
+      <header class="tm-site-header-box tm-bg-dark">
+        <h1 class="tm-site-title">Game of Thrones</h1>
+        <p class="mb-0 tm-site-subtitle">Memorable Quotes from the Show</p>
+      </header>
+    </div>
+    <!-- tm-top-container -->
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <!-- Site content -->
+          <div class="tm-content">
+            <!-- Section 0 Home -->
+
+            <section class="tm-section tm-section-0" id="value">
+              <h2 class="tm-section-title mb-3 font-weight-bold">
+                Quotes
+              </h2>
+              <div class="quotes">
+                <ol>
+                  <li id="quotesHere"></li>
+                </ol>
+                <!-- <div class="tm-textbox tm-bg-dark">
                       <p id="random">
                         Get a random quote.
                       </p>
@@ -72,87 +78,70 @@
                         characters in the houses
                       </p>
                        </div> -->
-                      </div>
-                    <button id="getQuote">Get Random Quote</button>
-                  </section>
-           
-                  <!-- Section 1 Houses and their members -->
-                  <section class="tm-section tm-section-1" id="value">
-                    <h2 class="tm-section-title mb-3 font-weight-bold">
-                      Houses
-                    </h2>
-                    <div class="tm-textbox tm-textbox-2 tm-bg-dark">
-                      <div class="houses">
-                        Houses listed here.
-                      </div>
-                      <p class="mb-4">
-                        characters in the houses
-                      </p>
-                      <button id="getHouse">Click Here</button>
-                    </div>
-                  </section>
-    
-                  <!-- Section 2 Characters list and their quotes -->
-                  <section class="tm-section tm-section-2 mx-auto" id="value">
-                    <h2 class="tm-section-title mb-3 font-weight-bold">
-                      Character List and their Quotes
-                    </h2>
-                    <div class="tm-textbox tm-textbox-2 tm-bg-dark">
-                      <div class="Characters">
-                        The quotes 
-                      </div>
-                      <button id="getCharacters">Click Here</button>
-                    </div>
-                  </section>
-    
-                  <!-- Section 3 Add Quote -->
-                  <h2 class="tm-section-title mb-3 font-weight-bold">
-                    Add your Quote
-                  </h2>
-                  <section class="tm-section tm-section-3 tm-section-left" id="value">
-                    <form action="" class="tm-contact-form" method="post">
-                      <div class="form-group mb-4">
-                        <input
-                          type="text"
-                          id="contact_name"
-                          name="contact_name"
-                          class="form-control"
-                          placeholder="Title of quote"
-                          required
-                        />
-                      </div>
-                      <div class="form-group mb-4">
-                        <input
-                          type="email"
-                          id="contact_email"
-                          name="contact_email"
-                          class="form-control"
-                          placeholder="Character"
-                          required
-                        />
-                      </div>
-                      <div class="form-group mb-4">
-                        <textarea
-                          rows="4"
-                          id="contact_message"
-                          name="contact_message"
-                          class="form-control"
-                          placeholder="Quote"
-                          required
-                        ></textarea>
-                      </div>
-                      <div class="form-group mb-0">
-                        <button type="submit" class="btn tm-send-btn tm-fl-right">
-                          Send
-                        </button>
-                      </div>
-                    </form>
-                  </section>
-                </div>
               </div>
-            </div>
+              <button id="getQuote">Get Random Quote</button>
+            </section>
+
+            <!-- Section 1 Houses and their members -->
+            <section class="tm-section tm-section-1" id="value">
+              <h2 class="tm-section-title mb-3 font-weight-bold">
+                Houses
+              </h2>
+              <div class="tm-textbox tm-textbox-2 tm-bg-dark">
+                <div class="houses">
+                  Houses listed here.
+                </div>
+                <p class="mb-4">
+                  characters in the houses
+                </p>
+                <button id="getHouse">Click Here</button>
+              </div>
+            </section>
+
+            <!-- Section 2 Characters list and their quotes -->
+            <section class="tm-section tm-section-2 mx-auto" id="value">
+              <h2 class="tm-section-title mb-3 font-weight-bold">
+                Character List and their Quotes
+              </h2>
+              <div class="tm-textbox tm-textbox-2 tm-bg-dark">
+                <div class="Characters">
+                  The quotes
+                </div>
+                <button id="getCharacters">Click Here</button>
+              </div>
+            </section>
+
+            <!-- Section 3 Add Quote -->
+            <h2 class="tm-section-title mb-3 font-weight-bold">
+              Add your Quote
+            </h2>
+            <section class="tm-section tm-section-3 tm-section-left" id="value">
+              <form action="" class="tm-contact-form" method="post">
+                <div class="form-group mb-4">
+                  <input type="text" id="contact_name" name="contact_name" class="form-control"
+                    placeholder="Title of quote" required />
+                </div>
+                <div class="form-group mb-4">
+                  <input type="email" id="contact_email" name="contact_email" class="form-control"
+                    placeholder="Character" required />
+                </div>
+                <div class="form-group mb-4">
+                  <textarea rows="4" id="contact_message" name="contact_message" class="form-control"
+                    placeholder="Quote" required></textarea>
+                </div>
+                <div class="form-group mb-0">
+                  <button type="submit" class="btn tm-send-btn tm-fl-right">
+                    Send
+                  </button>
+                </div>
+              </form>
+            </section>
           </div>
         </div>
-    <script src="JS/index.js"></script>
-  </body>
+      </div>
+    </div>
+  </div>
+  <script src="JS/index.js"></script>
+</body>
+
 </html>

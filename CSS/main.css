@@ -49,6 +49,10 @@ a {
   text-align: center;
 }
 
+#locked {
+visibility: hidden;
+}
+
 .tm-navbar-menu:hover {
   color: #950000;
   text-decoration: none;
