@@ -35,7 +35,8 @@
         //Several random Quotes
 
 
-fetch ("https://api.gameofthronesquotes.xyz/v1/random/5") 
+function fetchData () {
+    fetch ("https://api.gameofthronesquotes.xyz/v1/random/5") 
     .then ((response) => {
         // quotes = response.json() 
         // getQuotes (quotes)
@@ -76,13 +77,18 @@ fetch ("https://api.gameofthronesquotes.xyz/v1/random/5")
     
                 console.log('listQuote', listQuote)
 
-                
-    
-            })
-        }
+
+        })
+        let btn = getElementById("getQuote")
+        btn.addEventListener('click', () => {
+            listQuote
+        })
+    }
 
     }
-    
+}
+
+fetchData ()
 
   //Houses and their members
 // fetch ("https://api.gameofthronesquotes.xyz/v1/houses")
