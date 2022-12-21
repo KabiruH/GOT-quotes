@@ -10,11 +10,13 @@
     const getCharacters = document.getElementsByClassName ("Characters")
     
     let quotes = []
+    let houses = []
+    let characters = []
     let selectedQuote = null
     letSearch = null
     
     window.addEventListener ("load", () => {
-        getQuotes()
+        //getQuotes()
     
 
         
@@ -35,52 +37,60 @@
 
 fetch ("https://api.gameofthronesquotes.xyz/v1/random/5") 
     .then ((response) => {
+        // quotes = response.json() 
+        // getQuotes (quotes)
         if (response.ok) {
+            
+            //console.log (quotes)
+            
             return response.json()
         } else {
             throw new Error ('network error')
         }
     })
-    .then((quotes) =>{
-        console.log (quotes)
+    .then((response) =>{
+        quotes = response 
+        getQuotes (quotes)
+        
+       console.log (quotes)
                
     })
 
-    function getQuotes () {
-        console.log ({quotes})
+    function getQuotes (quotes) { 
+        console.log (quotes)
 
         if (quotes) {
-            quotes.forEach((sentence, character) => {
-                const listQuotes = document.createElement("li")
-                listQuotes.textContent = sentence.character
-                listQuotes.setAttribute("class", "listQuotes")
 
-                listQuotes.addEventListener("click", () => {
-                    selectedQuote = sentence.character
-                })
+            quotes.forEach((quote) => {
+                console.log('quote sentence', quote.sentence)
+                console.log('quote character', quote.character)
+                console.log('quote character name', quote.character.name)
+                console.log('quote character slug', quote.character.slug)
+                console.log('quote character house name', quote.character.house.name)
+                console.log('quote character house slug', quote.character.house.slug)
+    
+                const listQuote = document.createElement("li")
+                listQuote.innerHTML = `sentence: ${quote.sentence} </br> character name: ${quote.character.name}  </br> character house name: ${quote.character.house.name} </br> character house slug: ${quote.character.house.slug} </br> </br>`
+                const lost = document.getElementById('quotesHere')
+                lost.innerHTML += listQuote.innerHTML
+    
+                console.log('listQuote', listQuote)
 
-                getQuote.append(listQuotes)
+                
+    
             })
         }
+
     }
-
-  
     
-    
-    
-  
 
-
-
-
-//Houses and their members
-fetch ("https://api.gameofthronesquotes.xyz/v1/houses")
-    .then (function (response) {
-        return response.json()
-    })
-    .then (function (data) {
-        console.log (data)
-    })
+  //Houses and their members
+// fetch ("https://api.gameofthronesquotes.xyz/v1/houses")
+//     .then ((response) => {
+//         if (response.ok) {
+//             return response
+//         }
+//     })
 
 
 // Characters list and their quotes
