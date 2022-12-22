@@ -4,7 +4,7 @@ Game of Thrones Quotes
 ## Description
 This is a mini web application that offers quotes from the famous show Game of Thrones
 
-The show also shows a list of the Houses in the show and random quotes by the characters. 
+The mini-web also shows a list of the Houses in the show and random quotes by the characters. 
 
 Additionally, it allows you to send your own quotes from the show
 
@@ -14,6 +14,8 @@ The webpage to access the miniweb application is:
 
 ### Prerequisites
 
+To access the site you input *any username and password.* This will lead you to the content pages
+
 To view this site, you as the user only need to have a working browser such as 
     -Chrome
     -Mozilla Firefox
@@ -22,7 +24,6 @@ and others.
 
 The API used for this miniweb application is https://gameofthronesquotes.xyz/
 
-To access the site you input *any username and password.* This will lead you to the content pages
 
 
 ### Running the tests/getting the information

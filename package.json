@@ -1,0 +1,24 @@
+{
+  "name": "got-quotes",
+  "version": "1.0.0",
+  "description": "Showing the show's quotes",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KabiruH/GOT-quotes.git"
+  },
+  "keywords": [
+    "Quotes",
+    "houses",
+    "characters"
+  ],
+  "author": "Kabiru",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KabiruH/GOT-quotes/issues"
+  },
+  "homepage": "https://github.com/KabiruH/GOT-quotes#readme"
+}
