@@ -20,6 +20,8 @@ To view this site, you as the user only need to have a working browser such as
     -Brave
 and others. 
 
+The API used for this miniweb application is https://gameofthronesquotes.xyz/
+
 To access the site you input *any username and password.* This will lead you to the content pages
 
 
