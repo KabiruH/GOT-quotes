@@ -10,6 +10,8 @@ let characters = []
 let selectedQuote = null
 let Search = null
 
+document.addEventListener("DOMContentLoaded", () => {
+
 
 // Login Page
 window.addEventListener("load", () => {
@@ -134,3 +136,4 @@ function fetchCharacters() {
 }
 fetchCharacters()
 
+})
