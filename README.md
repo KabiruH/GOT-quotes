@@ -34,7 +34,7 @@ The get Houses section requires you to click on the button to get a list of the 
 
 Also you can view the houses, the characters and quotes in the second last section
 
-Finally, the last section you can send your own quote that can later be added if verified
+Finally, the last section you can send your own quote that can later be added if verified if true
 
 
 ## Using the website
